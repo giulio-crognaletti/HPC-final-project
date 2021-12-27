@@ -1,0 +1,19 @@
+To compile the program, just run the compile script to get all OMP,MPI and HYBRID version. Instead just type `make` inside each folder to get just one of the 3.
+
+Modules required to run the compile script: openmpi/4.0.3/gnu/9.3.0
+Compilers used: mpicc and gcc
+
+Usage of the function blur: ./blur [kernel-type] {x-kernel-size} {y-kernel-size} {additional-kernel-param} [input-file] {output-file}
+
+Squared brackets term are compulsory, while curly braces represent optional arguments.
+NOTE: x-kernel-size and y-kernel-size are compulsory for kernel types 0,1 and 2 (they can differ but must be both odd numbers), while must not be put if using option 3 (because is irrelevant there)
+
+The kernel-type argument follows and  expands the convention of the assignment:
+
+0 -> Mean Kernel
+1 -> Weighted Kernel
+2 -> Gaussian Kernel
+3 -> Custom Kernel
+
+Custom kernel are thought to be fed to the program in the form of a 16bit pgm file.
+
