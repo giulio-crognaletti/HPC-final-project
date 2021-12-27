@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd ./MPI
+make
+mv ./blur ../blur.omp
+
+cd ../OMP
+make
+mv ./blur ../blur.mpi
+
+cd ../HYB
+make
+mv ./blur ../blur.mpi_omp
